@@ -10,21 +10,22 @@ import java.text.NumberFormat;
 public class MainActivity extends Activity {
 
     int quantity = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    public void increment(View view){
+    public void increment(View view) {
         quantity = quantity + 1;
         display(quantity);
     }
 
-    public void decrement(View view){
+    public void decrement(View view) {
         if (quantity < 1) {
             quantity = 0;
-        }else {
+        } else {
             quantity = quantity - 1;
             display(quantity);
         }
@@ -35,13 +36,19 @@ public class MainActivity extends Activity {
         quantityTextView.setText("" + number);
     }
 
-    private void displayPrice(int number){
+    private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
-    public void submitOrder(View view){
-        display(quantity);
-        displayPrice(quantity*5);
+    public void submitOrder(View view) {
+        int price = quantity * 5;
+        String priceMessgae = "Total:$" + price + "\nThank you";
+        displayMessage(priceMessgae);
+    }
+
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 }
