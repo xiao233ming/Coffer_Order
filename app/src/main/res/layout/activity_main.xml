@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/name_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:inputType="textCapWords" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Toppings"
         android:layout_margin="16dp"
-        android:textSize="16sp"
-        android:textAllCaps="true"/>
+        android:text="Toppings"
+        android:textAllCaps="true"
+        android:textSize="16sp" />
 
     <CheckBox
+        android:id="@+id/whipped_cream_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Whipped cream"
         android:paddingLeft="24dp"
-        android:textSize="16sp"/>
+        android:text="Whipped cream"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/chocolate_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:text="chocolate_checkbox"
+        android:textSize="16sp" />
 
     <TextView
         android:layout_width="wrap_content"
